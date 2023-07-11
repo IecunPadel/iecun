@@ -46,8 +46,14 @@ const Carousel = ({items, pagination}: CarouselProps) => {
               [(index - 2) * SIZE, (index - 1) * SIZE, index * SIZE],
               [0.8, 1, 0.8],
             );
+            const opacity = interpolate(
+              pos.value,
+              [(index - 2) * SIZE, (index - 1) * SIZE, index * SIZE],
+              [0.7, 1, 0.7],
+            );
             return {
               transform: [{scale}],
+              opacity: opacity,
             };
           });
           if (item.key) {

@@ -53,7 +53,11 @@ const newMatch2: TMatch = {
   duration: 90,
 };
 
-const matches = [<Match match={newMatch} />, <Match match={newMatch2} />];
+const matches = [
+  <Match match={newMatch} />,
+  <Match match={newMatch2} />,
+  <Match match={newMatch} />,
+];
 
 export default function MatchesScreen(): JSX.Element {
   return (

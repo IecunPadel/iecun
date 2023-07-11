@@ -47,7 +47,7 @@ const Match = ({match}: MatchProps) => {
         </View>
         <View style={styles.row}>
           <Clock style={styles.icon} />
-          <Text style={styles.text}>{`${match.duration}min`}</Text>
+          <Text style={styles.text}>{`${match.duration} min`}</Text>
         </View>
       </View>
     </View>

@@ -71,11 +71,11 @@ const MainTab = ({state, descriptors, navigation}: BottomTabBarProps) => {
                 <IconSelector
                   name={label}
                   size={20}
-                  color={isFocused ? colors.primary500 : colors.neutral300}
+                  color={isFocused ? colors.primary500 : colors.neutral500}
                 />
                 <Text
                   style={{
-                    color: isFocused ? colors.primary500 : colors.neutral300,
+                    color: isFocused ? colors.primary500 : colors.neutral500,
                     fontFamily: isFocused ? 'Mulish-Bold' : 'Mulish-SemiBold',
                   }}>
                   {label}
