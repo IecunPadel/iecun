@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 import {colors} from './config/colors';
 import LinearGradient from 'react-native-linear-gradient';
 import Match from './components/Match';
 import {TMatch, TPlayerInfo} from './types';
+import Carousel from './components/Carousel';
 
 const yobama =
   'https://i.kym-cdn.com/photos/images/newsfeed/001/441/147/84e.jpg';
@@ -26,13 +27,13 @@ const teamB: Array<TPlayerInfo> = [
   {
     name: 'Dr. Phil',
     level: 5.47,
-    photo: 'https://i.kym-cdn.com/photos/images/newsfeed/001/441/147/84e.jpg',
+    photo:
+      'https://miro.medium.com/v2/resize:fit:2400/1*utCq9YCvCfkTFklSeaSgAw.jpeg',
   },
   {
     name: 'Obunga',
     level: 5.51,
-    photo:
-      'https://ih1.redbubble.net/image.1036116537.8224/flat,750x1000,075,f.jpg',
+    photo: 'https://i1.sndcdn.com/artworks-000369589368-pucuvi-t500x500.jpg',
   },
 ];
 
@@ -44,6 +45,17 @@ const newMatch: TMatch = {
   location: 'Pàdel Colors, Roquetes',
   duration: 90,
 };
+
+const newMatch2: TMatch = {
+  teamA: teamB,
+  teamB: teamA,
+  datetime: new Date(),
+  ranked: true,
+  location: 'Pàdel Colors, Roquetes',
+  duration: 90,
+};
+
+const matches = [<Match match={newMatch} />, <Match match={newMatch2} />];
 
 export default function App(): JSX.Element {
   return (
@@ -57,8 +69,9 @@ export default function App(): JSX.Element {
         <Image style={styles.profile_photo} source={{uri: yobama}} />
       </LinearGradient>
       <View style={styles.next}>
-        {/* <Text style={styles.title}>Next matches</Text> */}
-        <Match match={newMatch} />
+        <Text style={styles.title}>Next matches</Text>
+        <Carousel items={matches} pagination={true} />
+        {/* <Match match={newMatch} /> */}
       </View>
     </View>
   );
@@ -89,12 +102,12 @@ const styles = StyleSheet.create({
   },
   next: {
     flex: 1 / 3,
-    padding: '10%',
     width: '100%',
   },
   title: {
     fontFamily: 'Mulish-ExtraBold',
-    marginLeft: '8%',
+    marginLeft: '5%',
+    marginBottom: '2%',
     color: colors.neutral900,
     fontSize: 20,
   },

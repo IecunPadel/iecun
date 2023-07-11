@@ -5,8 +5,8 @@ export type TPlayerInfo = {
 };
 
 export type TMatch = {
-  teamA: Array<PlayerInfo>;
-  teamB: Array<PlayerInfo>;
+  teamA: Array<TPlayerInfo>;
+  teamB: Array<TPlayerInfo>;
   datetime: Date;
   ranked: boolean;
   location: string;

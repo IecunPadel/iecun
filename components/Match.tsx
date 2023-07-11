@@ -11,6 +11,9 @@ interface MatchProps {
   match: TMatch;
 }
 
+const borderColor = 'neutral500';
+const textColor = 'neutral700';
+
 const Match = ({match}: MatchProps) => {
   return (
     <View style={styles.container}>
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    borderColor: colors.neutral500,
+    borderColor: colors[borderColor],
     borderWidth: 1,
     borderRadius: 16,
     padding: '2%',
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor: colors.neutral500,
+    borderBottomColor: colors[borderColor],
     borderBottomWidth: 1,
     paddingHorizontal: '2%',
   },
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   icon: {
-    color: colors.neutral900,
+    color: colors[textColor],
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -102,12 +105,12 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Mulish-SemiBold',
     fontSize: 16,
-    color: colors.neutral900,
+    color: colors[textColor],
   },
   title: {
     fontFamily: 'Mulish-ExtraBold',
     fontSize: 16,
-    color: colors.neutral900,
+    color: colors[textColor],
   },
   row: {
     flexDirection: 'row',
